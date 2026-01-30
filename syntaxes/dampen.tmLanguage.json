@@ -14,13 +14,7 @@
       "include": "#doctype"
     },
     {
-      "include": "#tag-self-closing"
-    },
-    {
-      "include": "#tag-open"
-    },
-    {
-      "include": "#tag-close"
+      "include": "#tag"
     },
     {
       "include": "#binding"
@@ -41,9 +35,10 @@
       "match": "<!DOCTYPE[^>]*>",
       "name": "meta.tag.doctype.xml"
     },
-    "tag-self-closing": {
-      "match": "(<)(/?)([a-zA-Z_][a-zA-Z0-9_-]*)([^/>]*)(/>)",
-      "captures": {
+    "tag": {
+      "begin": "(<)(/?)([a-zA-Z_][a-zA-Z0-9_-]*)",
+      "end": "(/?>)",
+      "beginCaptures": {
         "1": {
           "name": "punctuation.definition.tag.begin.xml"
         },
@@ -51,95 +46,18 @@
           "name": "punctuation.definition.tag.slash.xml"
         },
         "3": {
-          "patterns": [
-            {
-              "include": "#tag-name-content"
-            }
-          ]
-        },
-        "4": {
-          "patterns": [
-            {
-              "include": "#attribute"
-            }
-          ]
-        },
-        "5": {
-          "name": "punctuation.definition.tag.end.xml"
+          "name": "entity.name.tag.dampen"
         }
-      }
-    },
-    "tag-open": {
-      "match": "(<)(/?)([a-zA-Z_][a-zA-Z0-9_-]*)([^/>]*)(>)",
-      "captures": {
+      },
+      "endCaptures": {
         "1": {
-          "name": "punctuation.definition.tag.begin.xml"
-        },
-        "2": {
-          "name": "punctuation.definition.tag.slash.xml"
-        },
-        "3": {
-          "patterns": [
-            {
-              "include": "#tag-name-content"
-            }
-          ]
-        },
-        "4": {
-          "patterns": [
-            {
-              "include": "#attribute"
-            }
-          ]
-        },
-        "5": {
           "name": "punctuation.definition.tag.end.xml"
         }
-      }
-    },
-    "tag-close": {
-      "match": "(</)([a-zA-Z_][a-zA-Z0-9_-]*)(>)",
-      "captures": {
-        "1": {
-          "name": "punctuation.definition.tag.begin.xml"
-        },
-        "2": {
-          "patterns": [
-            {
-              "include": "#tag-name-content"
-            }
-          ]
-        },
-        "3": {
-          "name": "punctuation.definition.tag.end.xml"
-        }
-      }
-    },
-    "tag-name-content": {
+      },
+      "name": "meta.tag.xml",
       "patterns": [
         {
-          "match": "^(column|row|container|scrollable|stack|text|image|svg|button|text_input|checkbox|slider|pick_list|radio|toggler|progress_bar|combobox|grid|tooltip|float|canvas|date_picker|time_picker|color_picker|menu|menu_item|menu_separator|context_menu|data_table|data_column|tree_view|tree_node|for|if|space|rule)$",
-          "name": "entity.name.tag.widget.dampen"
-        },
-        {
-          "match": "^(dampen)$",
-          "name": "entity.name.tag.root.dampen"
-        },
-        {
-          "match": "^(themes|theme|palette|typography|spacing|default_theme|follow_system)$",
-          "name": "entity.name.tag.theme.dampen"
-        },
-        {
-          "match": "^(style_classes|class)$",
-          "name": "entity.name.tag.style.dampen"
-        },
-        {
-          "match": "^(hover|focus|active|disabled)$",
-          "name": "entity.name.tag.state.dampen"
-        },
-        {
-          "match": "^[a-zA-Z_][a-zA-Z0-9_-]*$",
-          "name": "entity.name.tag.xml"
+          "include": "#attribute"
         }
       ]
     },
