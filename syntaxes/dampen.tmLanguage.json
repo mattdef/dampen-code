@@ -1,0 +1,203 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Dampen",
+  "scopeName": "source.dampen",
+  "fileTypes": [".dampen"],
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#cdata"
+    },
+    {
+      "include": "#doctype"
+    },
+    {
+      "include": "#tag-self-closing"
+    },
+    {
+      "include": "#tag-open"
+    },
+    {
+      "include": "#tag-close"
+    },
+    {
+      "include": "#binding"
+    }
+  ],
+  "repository": {
+    "comment": {
+      "begin": "<!--",
+      "end": "-->",
+      "name": "comment.block.xml"
+    },
+    "cdata": {
+      "begin": "<!\\[CDATA\\[",
+      "end": "\\]\\]>",
+      "name": "string.unquoted.cdata.xml"
+    },
+    "doctype": {
+      "match": "<!DOCTYPE[^>]*>",
+      "name": "meta.tag.doctype.xml"
+    },
+    "tag-self-closing": {
+      "match": "(<)(/?)([a-zA-Z_][a-zA-Z0-9_-]*)([^/>]*)(/>)",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.tag.begin.xml"
+        },
+        "2": {
+          "name": "punctuation.definition.tag.slash.xml"
+        },
+        "3": {
+          "patterns": [
+            {
+              "include": "#tag-name-content"
+            }
+          ]
+        },
+        "4": {
+          "patterns": [
+            {
+              "include": "#attribute"
+            }
+          ]
+        },
+        "5": {
+          "name": "punctuation.definition.tag.end.xml"
+        }
+      }
+    },
+    "tag-open": {
+      "match": "(<)(/?)([a-zA-Z_][a-zA-Z0-9_-]*)([^/>]*)(>)",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.tag.begin.xml"
+        },
+        "2": {
+          "name": "punctuation.definition.tag.slash.xml"
+        },
+        "3": {
+          "patterns": [
+            {
+              "include": "#tag-name-content"
+            }
+          ]
+        },
+        "4": {
+          "patterns": [
+            {
+              "include": "#attribute"
+            }
+          ]
+        },
+        "5": {
+          "name": "punctuation.definition.tag.end.xml"
+        }
+      }
+    },
+    "tag-close": {
+      "match": "(</)([a-zA-Z_][a-zA-Z0-9_-]*)(>)",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.tag.begin.xml"
+        },
+        "2": {
+          "patterns": [
+            {
+              "include": "#tag-name-content"
+            }
+          ]
+        },
+        "3": {
+          "name": "punctuation.definition.tag.end.xml"
+        }
+      }
+    },
+    "tag-name-content": {
+      "patterns": [
+        {
+          "match": "^(column|row|container|scrollable|stack|text|image|svg|button|text_input|checkbox|slider|pick_list|radio|toggler|progress_bar|combobox|grid|tooltip|float|canvas|date_picker|time_picker|color_picker|menu|menu_item|menu_separator|context_menu|data_table|data_column|tree_view|tree_node|for|if|space|rule)$",
+          "name": "entity.name.tag.widget.dampen"
+        },
+        {
+          "match": "^(dampen)$",
+          "name": "entity.name.tag.root.dampen"
+        },
+        {
+          "match": "^(themes|theme|palette|typography|spacing|default_theme|follow_system)$",
+          "name": "entity.name.tag.theme.dampen"
+        },
+        {
+          "match": "^(style_classes|class)$",
+          "name": "entity.name.tag.style.dampen"
+        },
+        {
+          "match": "^(hover|focus|active|disabled)$",
+          "name": "entity.name.tag.state.dampen"
+        },
+        {
+          "match": "^[a-zA-Z_][a-zA-Z0-9_-]*$",
+          "name": "entity.name.tag.xml"
+        }
+      ]
+    },
+    "attribute": {
+      "patterns": [
+        {
+          "include": "#state-attribute"
+        },
+        {
+          "include": "#responsive-attribute"
+        },
+        {
+          "include": "#standard-attribute"
+        }
+      ]
+    },
+    "state-attribute": {
+      "match": "(hover|focus|active|disabled):([a-zA-Z_][a-zA-Z0-9_-]*)(=)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.state.dampen"
+        },
+        "2": {
+          "name": "entity.other.attribute-name.xml"
+        },
+        "3": {
+          "name": "punctuation.separator.key-value.xml"
+        }
+      }
+    },
+    "responsive-attribute": {
+      "match": "(mobile|tablet|desktop):([a-zA-Z_][a-zA-Z0-9_-]*)(=)",
+      "captures": {
+        "1": {
+          "name": "keyword.other.responsive.dampen"
+        },
+        "2": {
+          "name": "entity.other.attribute-name.xml"
+        },
+        "3": {
+          "name": "punctuation.separator.key-value.xml"
+        }
+      }
+    },
+    "standard-attribute": {
+      "match": "([a-zA-Z_][a-zA-Z0-9_-]*)(=)",
+      "captures": {
+        "1": {
+          "name": "entity.other.attribute-name.xml"
+        },
+        "2": {
+          "name": "punctuation.separator.key-value.xml"
+        }
+      }
+    },
+    "binding": {
+      "match": "\\{[^{}]*\\}",
+      "name": "variable.other.binding.dampen"
+    }
+  }
+}

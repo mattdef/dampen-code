@@ -1,0 +1,130 @@
+{
+  "name": "dampen-code",
+  "displayName": "Dampen",
+  "description": "VS Code extension for Dampen UI framework with LSP support",
+  "version": "0.1.0",
+  "publisher": "dampen",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anomalyco/dampen-code.git"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Language Packs"
+  ],
+  "keywords": [
+    "dampen",
+    "ui",
+    "xml",
+    "lsp"
+  ],
+  "activationEvents": [
+    "onLanguage:dampen"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "dampen",
+        "aliases": [
+          "Dampen",
+          "dampen"
+        ],
+        "extensions": [
+          ".dampen"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dampen",
+        "scopeName": "source.dampen",
+        "path": "./syntaxes/dampen.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "dampen",
+        "path": "./snippets/dampen-snippets.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "dampen.checkSyntax",
+        "title": "Check Syntax",
+        "category": "Dampen",
+        "icon": "$(check)"
+      },
+      {
+        "command": "dampen.restartServer",
+        "title": "Restart Language Server",
+        "category": "Dampen",
+        "icon": "$(debug-restart)"
+      },
+      {
+        "command": "dampen.showLspOutput",
+        "title": "Show LSP Output",
+        "category": "Dampen",
+        "icon": "$(output)"
+      },
+      {
+        "command": "dampen.goToDefinition",
+        "title": "Go to Definition",
+        "category": "Dampen",
+        "icon": "$(go-to-file)"
+      }
+    ],
+    "configuration": {
+      "title": "Dampen",
+      "properties": {
+        "dampen.lspPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the dampen-lsp binary. If not set, the extension will search in PATH or download automatically."
+        },
+        "dampen.autoDownload": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically download the dampen-lsp binary if not found."
+        },
+        "dampen.lspVersion": {
+          "type": "string",
+          "default": "latest",
+          "description": "Version of dampen-lsp to download (e.g., 'latest' or 'v1.0.0')."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run webpack-prod",
+    "webpack": "webpack --mode development",
+    "webpack-prod": "webpack --mode production",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "eslint": "^8.x",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.x",
+    "vsce": "^2.x",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.x"
+  }
+}

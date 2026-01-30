@@ -1,0 +1,465 @@
+{
+  "Button Widget": {
+    "prefix": "button",
+    "body": [
+      "<button",
+      "  label=\"${1:Click me}\"",
+      "  on_click=\"${2:handle_click}\"",
+      "  ${3:enabled=\"{true}\"}",
+      "  ${4:style=\"${5:primary}\"}",
+      "  ${6:width=\"${7:auto}\"}",
+      "  ${8:hover:background=\"${9:#2980b9}\"}",
+      "  ${10:active:background=\"${11:#21618c}\"}",
+      "  ${12:disabled:opacity=\"${13:0.5}\"}",
+      "  />",
+      "$0"
+    ],
+    "description": "Create a button widget with all attributes"
+  },
+  "Column Widget": {
+    "prefix": "column",
+    "body": [
+      "<column",
+      "  ${1:spacing=\"${2:10}\"}",
+      "  ${3:padding=\"${4:20}\"}",
+      "  ${5:align_x=\"${6:start}\"}",
+      "  ${7:align_y=\"${8:start}\"}",
+      "  ${9:width=\"${10:auto}\"}",
+      "  ${11:height=\"${12:auto}\"}",
+      "  >",
+      "  $0",
+      "</column>"
+    ],
+    "description": "Create a column layout widget with all attributes"
+  },
+  "Row Widget": {
+    "prefix": "row",
+    "body": [
+      "<row",
+      "  ${1:spacing=\"${2:10}\"}",
+      "  ${3:padding=\"${4:20}\"}",
+      "  ${5:align_x=\"${6:start}\"}",
+      "  ${7:align_y=\"${8:start}\"}",
+      "  ${9:width=\"${10:auto}\"}",
+      "  ${11:height=\"${12:auto}\"}",
+      "  >",
+      "  $0",
+      "</row>"
+    ],
+    "description": "Create a row layout widget with all attributes"
+  },
+  "Container Widget": {
+    "prefix": "container",
+    "body": [
+      "<container",
+      "  ${1:padding=\"${2:20}\"}",
+      "  ${3:align_x=\"${4:start}\"}",
+      "  ${5:align_y=\"${6:start}\"}",
+      "  ${7:width=\"${8:auto}\"}",
+      "  ${9:height=\"${10:auto}\"}",
+      "  ${11:background=\"${12:#ffffff}\"}",
+      "  ${13:border_radius=\"${14:8}\"}",
+      "  ${15:shadow=\"${16:0 2 4 #00000010}\"}",
+      "  >",
+      "  $0",
+      "</container>"
+    ],
+    "description": "Create a container widget with all attributes"
+  },
+  "Text Widget": {
+    "prefix": "text",
+    "body": [
+      "<text",
+      "  value=\"${1:Hello, World!}\"",
+      "  ${2:size=\"${3:16}\"}",
+      "  ${4:color=\"${5:#333333}\"}",
+      "  ${6:font=\"${7:default}\"}",
+      "  ${8:weight=\"${9:normal}\"}",
+      "  ${10:align_x=\"${11:start}\"}",
+      "  ${12:align_y=\"${13:start}\"}",
+      "  />"
+    ],
+    "description": "Create a text widget with all attributes"
+  },
+  "Image Widget": {
+    "prefix": "image",
+    "body": [
+      "<image",
+      "  src=\"${1:path/to/image.png}\"",
+      "  ${2:width=\"${3:auto}\"}",
+      "  ${4:height=\"${5:auto}\"}",
+      "  ${6:fit=\"${7:contain}\"}",
+      "  />"
+    ],
+    "description": "Create an image widget"
+  },
+  "SVG Widget": {
+    "prefix": "svg",
+    "body": [
+      "<svg",
+      "  src=\"${1:path/to/icon.svg}\"",
+      "  ${2:width=\"${3:24}\"}",
+      "  ${4:height=\"${5:24}\"}",
+      "  ${6:color=\"${7:inherit}\"}",
+      "  />"
+    ],
+    "description": "Create an SVG widget"
+  },
+  "Text Input Widget": {
+    "prefix": "text_input",
+    "body": [
+      "<text_input",
+      "  ${1:value=\"{${2:input_value}}\"}",
+      "  placeholder=\"${3:Enter text...}\"",
+      "  ${4:on_input=\"${5:update_input}\"}",
+      "  ${6:on_submit=\"${7:handle_submit}\"}",
+      "  ${8:password=\"${9:false}\"}",
+      "  ${10:enabled=\"${11:true}\"}",
+      "  ${12:width=\"${13:auto}\"}",
+      "  />"
+    ],
+    "description": "Create a text input widget"
+  },
+  "Checkbox Widget": {
+    "prefix": "checkbox",
+    "body": [
+      "<checkbox",
+      "  label=\"${1:Option}\"",
+      "  ${2:checked=\"{${3:is_checked}}\"}",
+      "  ${4:on_toggle=\"${5:toggle_checked}\"}",
+      "  ${6:enabled=\"${7:true}\"}",
+      "  />"
+    ],
+    "description": "Create a checkbox widget"
+  },
+  "Slider Widget": {
+    "prefix": "slider",
+    "body": [
+      "<slider",
+      "  ${1:min=\"${2:0}\"}",
+      "  ${3:max=\"${4:100}\"}",
+      "  ${5:value=\"{${6:current_value}}\"}",
+      "  ${7:step=\"${8:1}\"}",
+      "  ${9:on_change=\"${10:update_value}\"}",
+      "  ${11:enabled=\"${12:true}\"}",
+      "  ${13:width=\"${14:auto}\"}",
+      "  />"
+    ],
+    "description": "Create a slider widget"
+  },
+  "Pick List Widget": {
+    "prefix": "pick_list",
+    "body": [
+      "<pick_list",
+      "  ${1:options=\"{${2:items}}\"}",
+      "  ${3:selected=\"{${4:current_item}}\"}",
+      "  ${5:on_select=\"${6:select_item}\"}",
+      "  ${7:placeholder=\"${8:Choose...}\"}",
+      "  ${9:enabled=\"${10:true}\"}",
+      "  ${11:width=\"${12:auto}\"}",
+      "  />"
+    ],
+    "description": "Create a pick list widget"
+  },
+  "Radio Widget": {
+    "prefix": "radio",
+    "body": [
+      "<radio",
+      "  label=\"${1:Option}\"",
+      "  value=\"${2:option_value}\"",
+      "  ${3:selected=\"{${4:selected_value}}\"}",
+      "  ${5:on_select=\"${6:select_option}\"}",
+      "  ${7:disabled=\"${8:false}\"}",
+      "  />"
+    ],
+    "description": "Create a radio button widget"
+  },
+  "Toggler Widget": {
+    "prefix": "toggler",
+    "body": [
+      "<toggler",
+      "  label=\"${1:Toggle}\"",
+      "  ${2:toggled=\"{${3:is_toggled}}\"}",
+      "  ${4:on_toggle=\"${5:toggle_value}\"}",
+      "  ${6:enabled=\"${7:true}\"}",
+      "  />"
+    ],
+    "description": "Create a toggle switch widget"
+  },
+  "Progress Bar Widget": {
+    "prefix": "progress_bar",
+    "body": [
+      "<progress_bar",
+      "  ${1:min=\"${2:0}\"}",
+      "  ${3:max=\"${4:100}\"}",
+      "  ${5:value=\"{${6:progress}}\"}",
+      "  />"
+    ],
+    "description": "Create a progress bar widget"
+  },
+  "Scrollable Widget": {
+    "prefix": "scrollable",
+    "body": [
+      "<scrollable",
+      "  ${1:direction=\"${2:vertical}\"}",
+      "  ${3:width=\"${4:auto}\"}",
+      "  ${5:height=\"${6:300}\"}",
+      "  >",
+      "  $0",
+      "</scrollable>"
+    ],
+    "description": "Create a scrollable container"
+  },
+  "Stack Widget": {
+    "prefix": "stack",
+    "body": [
+      "<stack",
+      "  ${1:width=\"${2:auto}\"}",
+      "  ${3:height=\"${4:auto}\"}",
+      "  >",
+      "  $0",
+      "</stack>"
+    ],
+    "description": "Create a stack (layered) container"
+  },
+  "Grid Widget": {
+    "prefix": "grid",
+    "body": [
+      "<grid",
+      "  columns=\"${1:3}\"",
+      "  ${2:spacing=\"${3:10}\"}",
+      "  ${4:width=\"${5:auto}\"}",
+      "  ${6:height=\"${7:auto}\"}",
+      "  >",
+      "  $0",
+      "</grid>"
+    ],
+    "description": "Create a grid layout widget"
+  },
+  "Tooltip Widget": {
+    "prefix": "tooltip",
+    "body": [
+      "<tooltip",
+      "  message=\"${1:Tooltip text}\"",
+      "  ${2:position=\"${3:top}\"}",
+      "  ${4:delay=\"${5:300}\"}",
+      "  >",
+      "  ${6:<button label=\"Hover me\" />}",
+      "</tooltip>"
+    ],
+    "description": "Create a tooltip wrapper"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "<for",
+      "  each=\"${1:item}\"",
+      "  in=\"{${2:items}}\"",
+      "  >",
+      "  ${3:<text value=\"{${1:item}}\" />}",
+      "</for>"
+    ],
+    "description": "Create a for loop iteration"
+  },
+  "If Condition": {
+    "prefix": "if",
+    "body": [
+      "<if",
+      "  condition=\"{${1:show_content}}\"",
+      "  >",
+      "  $0",
+      "</if>"
+    ],
+    "description": "Create a conditional rendering block"
+  },
+  "Space Widget": {
+    "prefix": "space",
+    "body": [
+      "<space",
+      "  ${1:width=\"${2:0}\"}",
+      "  ${3:height=\"${4:0}\"}",
+      "  />"
+    ],
+    "description": "Create empty space"
+  },
+  "Rule (Divider)": {
+    "prefix": "rule",
+    "body": [
+      "<rule",
+      "  ${1:direction=\"${2:horizontal}\"}",
+      "  ${3:color=\"${4:inherit}\"}",
+      "  ${5:thickness=\"${6:1}\"}",
+      "  />"
+    ],
+    "description": "Create a divider line"
+  },
+  "Dampen Root": {
+    "prefix": "dampen",
+    "body": [
+      "<dampen version=\"${1:1.0}\">",
+      "  $0",
+      "</dampen>"
+    ],
+    "description": "Create a dampen root element"
+  },
+  "Theme Definition": {
+    "prefix": "theme",
+    "body": [
+      "<themes>",
+      "  <theme name=\"${1:custom}\"",
+      "    ${2:extends=\"${3:base}\"}",
+      "    >",
+      "    <palette",
+      "      primary=\"${4:#3498db}\"",
+      "      secondary=\"${5:#2ecc71}\"",
+      "      success=\"${6:#27ae60}\"",
+      "      warning=\"${7:#f39c12}\"",
+      "      danger=\"${8:#e74c3c}\"",
+      "      background=\"${9:#ecf0f1}\"",
+      "      surface=\"${10:#ffffff}\"",
+      "      text=\"${11:#2c3e50}\"",
+      "      text_secondary=\"${12:#7f8c8d}\"",
+      "      />",
+      "    <typography",
+      "      font_family=\"${13:Inter, sans-serif}\"",
+      "      font_size_base=\"${14:16}\"",
+      "      font_size_small=\"${15:12}\"",
+      "      font_size_large=\"${16:20}\"",
+      "      font_weight=\"${17:normal}\"",
+      "      line_height=\"${18:1.5}\"",
+      "      />",
+      "    <spacing unit=\"${19:8}\" />",
+      "  </theme>",
+      "</themes>",
+      "",
+      "<default_theme name=\"${1:custom}\" />"
+    ],
+    "description": "Create a theme definition"
+  },
+  "Style Class": {
+    "prefix": "class",
+    "body": [
+      "<style_classes>",
+      "  <class",
+      "    name=\"${1:button_primary}\"",
+      "    ${2:extends=\"${3:button_base}\"}",
+      "    background=\"${4:#3498db}\"",
+      "    color=\"${5:#ffffff}\"",
+      "    padding=\"${6:12 24}\"",
+      "    border_radius=\"${7:6}\"",
+      "    border_width=\"${8:2}\"",
+      "    border_color=\"${9:#2980b9}\"",
+      "    ${10:hover:background=\"${11:#2980b9}\"}",
+      "    ${12:active:background=\"${13:#21618c}\"}",
+      "    ${14:disabled:opacity=\"${15:0.5}\"}",
+      "    />",
+      "</style_classes>"
+    ],
+    "description": "Create a style class definition"
+  },
+  "Padding": {
+    "prefix": "padding",
+    "body": ["padding=\"${1:16}\""],
+    "description": "Add padding property"
+  },
+  "Margin": {
+    "prefix": "margin",
+    "body": ["margin=\"${1:8}\""],
+    "description": "Add margin property"
+  },
+  "Width": {
+    "prefix": "width",
+    "body": ["width=\"${1:100}\""],
+    "description": "Add width property"
+  },
+  "Height": {
+    "prefix": "height",
+    "body": ["height=\"${1:50}\""],
+    "description": "Add height property"
+  },
+  "Background": {
+    "prefix": "bg",
+    "body": ["background=\"${1:#ffffff}\""],
+    "description": "Add background property"
+  },
+  "Color": {
+    "prefix": "color",
+    "body": ["color=\"${1:#333333}\""],
+    "description": "Add color property"
+  },
+  "Border Radius": {
+    "prefix": "radius",
+    "body": ["border_radius=\"${1:8}\""],
+    "description": "Add border radius property"
+  },
+  "Shadow": {
+    "prefix": "shadow",
+    "body": ["shadow=\"${1:0 2 4 #00000010}\""],
+    "description": "Add shadow property"
+  },
+  "Spacing": {
+    "prefix": "spacing",
+    "body": ["spacing=\"${1:10}\""],
+    "description": "Add spacing property"
+  },
+  "Align X": {
+    "prefix": "alignx",
+    "body": ["align_x=\"${1|start,center,end|}\""],
+    "description": "Add horizontal alignment"
+  },
+  "Align Y": {
+    "prefix": "aligny",
+    "body": ["align_y=\"${1|start,center,end|}\""],
+    "description": "Add vertical alignment"
+  },
+  "On Click Handler": {
+    "prefix": "onclick",
+    "body": ["on_click=\"${1:handle_click}\""],
+    "description": "Add on_click handler"
+  },
+  "On Input Handler": {
+    "prefix": "oninput",
+    "body": ["on_input=\"${1:handle_input}\""],
+    "description": "Add on_input handler"
+  },
+  "On Change Handler": {
+    "prefix": "onchange",
+    "body": ["on_change=\"${1:handle_change}\""],
+    "description": "Add on_change handler"
+  },
+  "Binding": {
+    "prefix": "bind",
+    "body": ["{${1:value}}"],
+    "description": "Insert a binding expression"
+  },
+  "Hover State": {
+    "prefix": "hover",
+    "body": ["hover:${1:background}=\"${2:#2980b9}\""],
+    "description": "Add hover state style"
+  },
+  "Active State": {
+    "prefix": "active",
+    "body": ["active:${1:background}=\"${2:#21618c}\""],
+    "description": "Add active state style"
+  },
+  "Disabled State": {
+    "prefix": "disabled",
+    "body": ["disabled:${1:opacity}=\"${2:0.5}\""],
+    "description": "Add disabled state style"
+  },
+  "Mobile Responsive": {
+    "prefix": "mobile",
+    "body": ["mobile:${1:padding}=\"${2:10}\""],
+    "description": "Add mobile breakpoint style"
+  },
+  "Tablet Responsive": {
+    "prefix": "tablet",
+    "body": ["tablet:${1:padding}=\"${2:15}\""],
+    "description": "Add tablet breakpoint style"
+  },
+  "Desktop Responsive": {
+    "prefix": "desktop",
+    "body": ["desktop:${1:padding}=\"${2:20}\""],
+    "description": "Add desktop breakpoint style"
+  }
+}
