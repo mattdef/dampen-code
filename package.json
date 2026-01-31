@@ -3,7 +3,7 @@
   "displayName": "Dampen",
   "description": "VS Code extension for Dampen UI framework with LSP support",
   "version": "0.1.0",
-  "publisher": "mattdef",
+  "publisher": "Mattdef",
   "icon": "icon.png",
   "repository": {
     "type": "git",
